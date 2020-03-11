@@ -1,12 +1,11 @@
 pipeline {
-    agent { docker { image 'python:3.7.4-alpine' } }
+    agent { docker { image 'python:3.5.1' } }
     stages {
         stage('build') {
-        steps {
-            sh 'go version'
-            sh 'go build ./...'
-            sh 'python test_calc.py > unittest_results.txt 2>&1'
-       }
-     }
-   }
+            steps {
+                sh 'python --version'
+                sh 'python test_calc.py > unittest_results.txt 2>&1'
+            }
+        }
+    }
 }
