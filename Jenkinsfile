@@ -15,6 +15,7 @@ pipeline {
         steps {
             sh 'go version'
             sh 'go build ./...'
+            sh 'python test_calc.py > unittest_results.txt 2>&1'
        }
      }
    }
