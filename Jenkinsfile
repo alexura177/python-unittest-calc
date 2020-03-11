@@ -1,15 +1,5 @@
 pipeline {
-    agent { docker { image 'golang' } }
-    stages {
-        stage('lint') {
-            steps {
-                sh 'go vet ./...'
-            }
-        }
-    }
-}
-pipeline {
-    agent { docker { image 'golang' } }
+    agent { docker { image 'python:3.7.4-alpine' } }
     stages {
         stage('build') {
         steps {
