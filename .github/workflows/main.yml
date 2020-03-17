@@ -34,3 +34,4 @@ jobs:
         echo test, and deploy your project.
         pwd
         date
+        python test_calc.py
